@@ -29,8 +29,8 @@
       var col = [];
 
       this.puzzle.forEach( function (pos) {
-        if (pos[0] === i) {
-          col.push(pos[1]);
+        if (pos[1] === i) {
+          col.push(pos[0]);
         }
       });
 
@@ -47,8 +47,8 @@
       var row = [];
 
       this.puzzle.forEach( function (pos) {
-        if (pos[1] === i) {
-          row.push(pos[0]);
+        if (pos[0] === i) {
+          row.push(pos[1]);
         }
       });
 
@@ -62,7 +62,7 @@
     var hint = [];
     var count = 0;
 
-    for (var i = 0; i < size; i++) {
+    for (var i = 0; i <= size; i++) {
       if (arr.indexOf(i) > -1) {
         count += 1;
       } else if ((arr.indexOf(i) === -1) && (count > 0)) {

@@ -19,11 +19,11 @@
       this.solution.topHint[i].forEach( function (hint) {
         var $hintItem = $("<li></li>");
         $hintItem.html(hint);
-        $hints.append($hintItem[0]);
+        $hints.append($hintItem);
       });
 
-      $th.html($hints[0]);
-      this.$head.append($th[0]);
+      $th.html($hints);
+      this.$head.append($th);
     }
 
     for (var i = 0; i < this.board.dimY; i++) {
@@ -33,19 +33,19 @@
       this.solution.leftHint[i].forEach( function (hint) {
         var $hintItem = $("<li></li>");
         $hintItem.html(hint);
-        $hints.append($hintItem[0]);
+        $hints.append($hintItem);
       });
 
       var $td = $('<td></td>');
-      $td.html($hints[0]);
-      $tr.append($td[0]);
+      $td.html($hints);
+      $tr.append($td);
 
       for (var j = 0; j < this.board.dimX; j++) {
         var $td = $('<td></td>');
         $tr.append($td.attr("data-x", j).attr("data-y", i));
       }
 
-      this.$body.append($tr[0]);
+      this.$body.append($tr);
     }
   };
 
