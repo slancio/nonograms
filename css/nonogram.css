@@ -49,6 +49,7 @@ td, th {
 }
 
 td {
+  display: block;
   height: 30px;
   border: 1px solid black;
 }
@@ -67,6 +68,10 @@ td:first-child,
 th:first-child {
   width: 160px;
   border: 0;
+}
+
+td:hover {
+  cursor: pointer;
 }
 
 ul {
@@ -94,4 +99,24 @@ strong {
   font-weight: 700;
   font-size: 20px;
   height: 20px;
+}
+
+.pixel {
+  background: black;
+}
+
+.block {
+  background: 
+    linear-gradient(to top left,
+      rgba(0,0,0,0) 0%,
+      rgba(0,0,0,0) calc(50% - 0.8px),
+      rgba(0,0,0,1) 50%,
+      rgba(0,0,0,0) calc(50% + 0.8px),
+      rgba(0,0,0,0) 100%),
+    linear-gradient(to top right,
+      rgba(0,0,0,0) 0%,
+      rgba(0,0,0,0) calc(50% - 0.8px),
+      rgba(0,0,0,1) 50%,
+      rgba(0,0,0,0) calc(50% + 0.8px),
+      rgba(0,0,0,0) 100%);
 }
