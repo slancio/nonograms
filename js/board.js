@@ -15,7 +15,23 @@
     this.blocks = [];
   };
 
-  Board.prototype.checkWinState = function () {
+  Board.prototype.checkWinState = function (el) {
+    var boardPixelPositions = [];
+    this.pixels.forEach( function (pixel) {
+      boardPixelPositions.push(pixel.pos());
+    });
+    var solutionPixelPositions = [];
+    this.solution.pixels.forEach( function (pixel) {
+      solutionPixelPositions.push(pixel.pos());
+    });
+
+    var compareGameArrays = function (board, solution) {
+      return _.isEqual(board.sort(), solution.sort());
+    };
+
+    if (compareGameArrays(boardPixelPositions, solutionPixelPositions)) {
+      
+    }
   };
 
   Board.prototype.toggle = function (pos) {

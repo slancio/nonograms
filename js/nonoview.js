@@ -15,9 +15,9 @@
     var that = this;
     this.$body.click( function (event) {
       var $pixel = $(event.target);
-      var pos = [$pixel.data("x"), $pixel.data("y")];
+      var pos = [$pixel.data("y"), $pixel.data("x")];
       that.board.toggle(pos);
-      that.board.checkWinState;
+      that.board.checkWinState();
       that.render();
     });
   };
@@ -66,11 +66,11 @@
     $('.cell').removeClass("pixel block");
     this.board.pixels.forEach( function (coord) {
       var pos = coord.pos();
-      $('.cell[data-x="' + pos[0] + '"][data-y="' + pos[1] + '"]').addClass('pixel');
+      $('.cell[data-x="' + pos[1] + '"][data-y="' + pos[0] + '"]').addClass('pixel');
     });
     this.board.blocks.forEach( function (coord) {
       var pos = coord.pos();
-      $('.cell[data-x="' + pos[0] + '"][data-y="' + pos[1] + '"]').addClass('block');
+      $('.cell[data-x="' + pos[1] + '"][data-y="' + pos[0] + '"]').addClass('block');
     });
   };
 
