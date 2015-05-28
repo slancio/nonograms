@@ -18,7 +18,7 @@
 
       this.solution.topHint[i].forEach( function (hint) {
         var $hintItem = $("<li></li>");
-        $hintItem.html(hint);
+        $hintItem.html('<strong>' + hint + '</strong>');
         $hints.append($hintItem);
       });
 
@@ -32,7 +32,7 @@
 
       this.solution.leftHint[i].forEach( function (hint) {
         var $hintItem = $("<li></li>");
-        $hintItem.html(hint);
+        $hintItem.html('<strong>' + hint + '</strong>');
         $hints.append($hintItem);
       });
 

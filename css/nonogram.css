@@ -1,0 +1,101 @@
+/* RESET */
+
+html, body, head, table, strong,
+thead, tr, th, td, ul, li {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 100%;
+  text-decoration: inherit;
+  vertical-align: baseline;
+  box-sizing: inherit;
+
+}
+
+body {
+  line-height: 1;
+}
+
+ul {
+  list-style: none;
+}
+
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* Table */
+
+table {
+  width: 466px;
+  height: 466px;
+  box-sizing: border-box;
+  margin: auto;
+}
+
+td, th {
+  display: block;
+  float: left;
+  width: 30px;
+  border: 1px solid white;
+  box-sizing: border-box;
+}
+
+td {
+  height: 30px;
+  border: 1px dashed black;
+}
+
+tr {
+  border-top: 1px dashed black;
+  border-bottom: 1px dashed black;
+}
+
+th {
+  height: 160px;
+  position: relative;
+}
+
+th > ul {
+  position: absolute;
+  bottom: 0;
+}
+
+td:first-child,
+th:first-child {
+  width: 160px;
+  border: 0;
+}
+
+ul {
+  float: right;
+}
+
+li {
+  width: 30px;
+  height: 30px;
+  display: block;
+  float: left;
+  position: relative;
+}
+
+strong {
+  position: absolute;
+  margin: auto;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  height: 20px;
+}
