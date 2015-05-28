@@ -1,7 +1,7 @@
 /* RESET */
 
 html, body, head, table, strong,
-thead, tr, th, td, ul, li {
+thead, tbody, tr, th, td, ul, li {
   border: 0;
   margin: 0;
   padding: 0;
@@ -14,7 +14,6 @@ thead, tr, th, td, ul, li {
   text-decoration: inherit;
   vertical-align: baseline;
   box-sizing: inherit;
-
 }
 
 body {
@@ -34,28 +33,24 @@ ul {
 /* Table */
 
 table {
-  width: 466px;
-  height: 466px;
+  width: 461px;
+  height: 461px;
   box-sizing: border-box;
   margin: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 td, th {
   display: block;
   float: left;
-  width: 30px;
-  border: 1px solid white;
-  box-sizing: border-box;
+  width: 29px;
+  margin: 0.5px;
 }
 
 td {
   height: 30px;
-  border: 1px dashed black;
-}
-
-tr {
-  border-top: 1px dashed black;
-  border-bottom: 1px dashed black;
+  border: 1px solid black;
 }
 
 th {
@@ -79,8 +74,9 @@ ul {
 }
 
 li {
-  width: 30px;
-  height: 30px;
+  width: 29px;
+  height: 29px;
+  margin: 0.5px;
   display: block;
   float: left;
   position: relative;
