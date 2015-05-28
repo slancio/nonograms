@@ -15,27 +15,7 @@
     this.blocks = [];
   };
 
-  Board.prototype.render = function () {
-    var boardString = "";
-    
-    for (var i = 0; i < this.dimY; i++) {
-      var rowString = "";
-
-      for (var j = 0; k < this.dimX; j++) {
-
-        if (this.isPixel([j,i])) {
-          rowString += "+";
-        } else if (this.isBlock([j,i])) {
-          rowString += "x";
-        } else {
-          rowString += ".";
-        }
-
-      }
-      boardString += rowString;
-    }
-
-    return boardString;
+  Board.prototype.checkWinState = function () {
   };
 
   Board.prototype.toggle = function (pos) {
@@ -61,7 +41,6 @@
     this.pixels.forEach( function (coord, index, pixels) {
       if (coord.equals(pos)) {
         pixels.splice(index, 1);
-        return;
       }
     });
   };
@@ -70,30 +49,51 @@
     this.blocks.forEach( function (coord, index, blocks) {
       if (coord.equals(pos)) {
         blocks.splice(index, 1);
-        return;
       }
     });
-  };
-
-  Board.prototype.removeBlock = function (pos) {
   };
 
   Board.prototype.isPixel = function (pos) {
+    var question = false;
     this.pixels.forEach( function (coord) {
       if (coord.equals(pos)) {
-        return true;
+        question = true;
       }
     });
-    return false;
+    return question;
   };
 
   Board.prototype.isBlock = function (pos) {
+    var question = false;
     this.blocks.forEach( function (coord) {
       if (coord.equals(pos)) {
-        return true;
+        question = true;
       }
     });
-    return false;
+    return question;
+  };
+
+  Board.prototype.render = function () {
+    var boardString = "";
+    
+    for (var i = 0; i < this.dimY; i++) {
+      var rowString = "";
+
+      for (var j = 0; k < this.dimX; j++) {
+
+        if (this.isPixel([j,i])) {
+          rowString += "+";
+        } else if (this.isBlock([j,i])) {
+          rowString += "x";
+        } else {
+          rowString += ".";
+        }
+
+      }
+      boardString += rowString;
+    }
+
+    return boardString;
   };
 
 })();
