@@ -17,8 +17,8 @@
       var $pixel = $(event.target);
       var pos = [$pixel.data("y"), $pixel.data("x")];
       that.board.toggle(pos);
-      that.board.checkWinState();
       that.render();
+      that.board.checkWinState();
     });
   };
 

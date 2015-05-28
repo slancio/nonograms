@@ -30,7 +30,7 @@
     };
 
     if (compareGameArrays(boardPixelPositions, solutionPixelPositions)) {
-      
+      alert("You win!");
     }
   };
 
