@@ -15,18 +15,6 @@
     this.lastPosition = [0,0];   // Set default starting position for key navigation
   };
 
-  View.prototype.updateBoard = function (type) {
-    if (typeof type === 'undefined') {
-      this.lastAction = this.board.toggle(this.lastPosition);
-    } else {
-      this.lastAction = this.board.draw(this.lastPosition, type);
-    }
-    this.render();
-    if (this.board.checkWinState()) {
-      this.winBoard();
-    }
-  };
-
   View.prototype.handleClickEvent = function () {
     var that = this;
 
@@ -40,7 +28,7 @@
       that.mouseActive = false;
     });
 
-    $('.cell').on('mousedown', function(event) {
+    $('.cell').on('mousedown', function (event) {
       that.mouseActive = true;
       var $pixel = $(event.target);
       that.lastPosition = [$pixel.data("y"), $pixel.data("x")];
@@ -51,7 +39,7 @@
       that.mouseActive = false;
     });
 
-    $('.cell').on('mouseenter', function(event) {
+    $('.cell').on('mouseenter', function (event) {
       var $pixel = $(event.target);
       that.lastPosition = [$pixel.data("y"), $pixel.data("x")];
       that.render();
@@ -62,6 +50,21 @@
 
     $('li.hint').on('click', function() {
       $(this).toggleClass('checked');
+    });
+
+    $('.clear-blocks').on('click', function (event) {
+      event.preventDefault();
+      that.resetBlocks();
+    });
+
+    $('.start-over').on('click', function (event) {
+      event.preventDefault();
+      that.resetBoard();
+    });
+
+    $('.new-game').on('click', function (event) {
+      event.preventDefault();
+      location.reload();
     });
   };
 
@@ -122,6 +125,18 @@
     }.bind(this));
   };
 
+  View.prototype.updateBoard = function (type) {
+    if (typeof type === 'undefined') {
+      this.lastAction = this.board.toggle(this.lastPosition);
+    } else {
+      this.lastAction = this.board.draw(this.lastPosition, type);
+    }
+    this.render();
+    if (this.board.checkWinState()) {
+      this.winBoard();
+    }
+  };
+
   View.prototype.setupBoard = function () {
     for (var i = 0; i < this.board.dimX; i++) {
       var $th = $("<th></th>");
@@ -165,7 +180,7 @@
   };
 
   View.prototype.winBoard = function () {
-    this.board.blocks = [];
+    this.resetBlocks();
     this.render();
 
     // Prevent additional interactions with the game since it has already been completed
@@ -183,6 +198,18 @@
     });
   };
 
+  View.prototype.resetBoard = function () {
+    this.board.clearBoard();
+    this.mouseActive  = false;
+    this.lastAction   = 'pixel';
+    this.lastPosition = [0,0];
+    this.render();
+  };
+
+  View.prototype.resetBlocks = function () {
+    this.board.clearBlocks();
+    this.render();
+  };
 
   View.prototype.render = function () {
     $('.cell').removeClass("pixel block highlight");

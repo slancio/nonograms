@@ -23,8 +23,3 @@ You can [view the Wikipedia page on Nonograms](https://en.wikipedia.org/wiki/Non
 * Z / B: Set selected box to Filled
 * X / N: Set selected box to Blocked
 * C / M: Clear selected box
-
-
-## Additional Info
-
-Pencil Icon is from the Farm-Fresh Web Icon pack made available by [FatCow Web Hosting](http://www.fatcow.com) and is distributed under the [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/us/deed.en) license.
