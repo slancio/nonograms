@@ -101,12 +101,15 @@
           }
         break;
         case 90:    //z
+        case 66:    //b
           this.updateBoard('pixel');    //draw pixel
         break;
         case 88:    //x
+        case 78:    //n
           this.updateBoard('block');    //draw block
         break;
         case 67:    //c
+        case 77:    //m
           this.updateBoard('');    //clear cell
         break;
         case 32:    //space
