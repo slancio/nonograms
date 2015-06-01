@@ -46,7 +46,7 @@
       if (that.mouseActive) {
         var $pixel = $(event.target);
         var pos = [$pixel.data("y"), $pixel.data("x")];
-        that.board.toggle(pos, that.lastAction);
+        that.lastAction = that.board.draw(pos, that.lastAction);
         that.render();
         if (that.board.checkWinState()) {
           that.winBoard();
