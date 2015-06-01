@@ -184,14 +184,15 @@
     this.render();
 
     // Prevent additional interactions with the game since it has already been completed
-    $('.cell').off('mouseup').off('mousedown').off('mouseenter');
+    $('.cell').off('mouseup').off('mousedown').off('mouseenter').off('click');
+    $('.board-resets').empty();
     $(document).unbind('keyup');
 
     $('.board-head').addClass('win-state');
     $('.cell').addClass('win-state').removeClass('highlight');
     $('.hint').addClass('win-state');
     $('body').append('<h1 class="win-state">You Win!</h1>')
-             .append('<form class="new-game win-state"><button>Play again?</button></form>');
+             .append('<form class="new-game win-state"><button>New game?</button></form>');
     $('.new-game').click( function (event) {
       event.preventDefault();
       location.reload();
