@@ -17,11 +17,11 @@
   View.prototype.handleClickEvent = function () {
     var that = this;
 
-    $('.table').on('mousedown', function() {
+    $('.board').on('mousedown', function() {
       that.mouseActive = true;
     });
 
-    $('.table').on('mouseup', function() {
+    $('.board').on('mouseup', function() {
       that.mouseActive = false;
     }).on('mouseleave', function() {
       that.mouseActive = false;
