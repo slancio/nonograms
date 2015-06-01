@@ -53,9 +53,6 @@
       case 'block':
         this.addBlock(pos);
       break;
-      case '':
-        this.removeBlock(pos);
-      break;
       case 'pixel':
         this.addPixel(pos);
       break;
